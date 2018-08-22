@@ -1,0 +1,42 @@
+<%= form_with(model: timing, local: true) do |form| %>
+  <% if timing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timing.errors.count, "error") %> prohibited this timing from being saved:</h2>
+
+      <ul>
+      <% timing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :timing_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semester %>
+    <%= form.number_field :semester, id: :timing_semester %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.text_field :month, id: :timing_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day %>
+    <%= form.number_field :day, id: :timing_day %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :timing_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

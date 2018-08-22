@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @timing.year %>
+</p>
+
+<p>
+  <strong>Semester:</strong>
+  <%= @timing.semester %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @timing.month %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @timing.day %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @timing.name %>
+</p>
+
+<%= link_to 'Edit', edit_timing_path(@timing) %> |
+<%= link_to 'Back', timings_path %>

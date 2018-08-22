@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container col-md-6">
+    <table class="table thead-dark table-bordered ">
+      <thead>
+        <tr>
+          <th scope="col"># </th>
+          <th scope="col">Año</th>
+          <th scope="col">Semestre</th>
+          <th scope="col">Mes</th>
+          <th scope="col">Dia</th>
+          <th scope="col">Nombre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @timings.each do |timing| %>
+          <tr>
+            <th scope="row"><%= timing.id %></th>
+            <td><%= timing.year %></td>
+            <td><%= timing.semester %></td>
+            <td><%= timing.month %></td>
+            <td><%= timing.day %></td>
+            <td><%= timing.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="col-md-7 col-md-push-2">
+  <%= will_paginate @timings %>
+  </div>
+   
+
+  
+</body>
+</html>
