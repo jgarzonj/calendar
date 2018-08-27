@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180822034702) do
+ActiveRecord::Schema.define(version: 20180827132952) do
 
-  create_table "timings", force: :cascade do |t|
+  create_table "timings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer "year"
     t.integer "semester"
     t.string "month"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20180822034702) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "holiday"
   end
 
 end
